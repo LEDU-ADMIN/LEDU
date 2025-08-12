@@ -90,7 +90,7 @@ export default function DiaryTransformation({ className = '' }) {
           into his chest amid an
         </tspan>
         <tspan x="680" dy="1.2em">
-          argument. The child didn't{' '}
+          argument. The child didn&apos;t{' '}
         </tspan>
         <tspan x="680" dy="1.2em">
           take her eyes off her

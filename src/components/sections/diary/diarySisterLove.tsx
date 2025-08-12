@@ -48,7 +48,7 @@ export default function DiarySisterLove({ className = '' }) {
         textAnchor="start"
         className="gloria"
       >
-        A Sister's Love Amidst Loss
+        A Sister&apos;s Love Amidst Loss
       </text>
 
       <text

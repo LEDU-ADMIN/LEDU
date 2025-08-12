@@ -17,11 +17,11 @@ export default function Prakash() {
           {/* Left Column */}
           <div className="space-y-12">
             <p className="text-lg font-urbanist">
-              Prakash Bista was born in Kalikot, a remote rural village where residents didn't even
-              have access to a hospital. His parents, after a three-day walk to the nearest town,
-              saw children in school uniforms and decided to send Prakash to a boarding school. He
-              faced several hurdles throughout his educational journey, with both his parents
-              unfortunately passing away as he was preparing for his final school exams.
+              Prakash Bista was born in Kalikot, a remote rural village where residents didn&apos;t
+              even have access to a hospital. His parents, after a three-day walk to the nearest
+              town, saw children in school uniforms and decided to send Prakash to a boarding
+              school. He faced several hurdles throughout his educational journey, with both his
+              parents unfortunately passing away as he was preparing for his final school exams.
             </p>
 
             <p className="text-lg font-urbanist">
@@ -63,8 +63,8 @@ export default function Prakash() {
               />
 
               <p className="text-3xl font-urbanist text-center">
-                Prakash's story reminds us that one individual's determination can ignite change for
-                entire communities.
+                Prakash&apos;s story reminds us that one individual&apos;s determination can ignite
+                change for entire communities.
               </p>
             </div>
           </div>

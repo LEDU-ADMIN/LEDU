@@ -61,7 +61,7 @@ export default function DiaryNotForgotten({ className = '' }) {
         className="handwritten"
       >
         <tspan x="140" dy="0">
-          Another child's father
+          Another child&apos;s father
         </tspan>
         <tspan x="140" dy="1.2em">
           moved to India to earn
@@ -91,7 +91,7 @@ export default function DiaryNotForgotten({ className = '' }) {
           remittances improved
         </tspan>
         <tspan x="140" dy="1.2em">
-          his family's life.
+          his family&apos;s life.
         </tspan>
       </text>
 
@@ -108,13 +108,13 @@ export default function DiaryNotForgotten({ className = '' }) {
           His wife quickly remarried and shut the child off from her{' '}
         </tspan>
         <tspan x="140" dy="1.2em">
-          life. The little girl is not allowed to come to her mother's{' '}
+          life. The little girl is not allowed to come to her mother&apos;s{' '}
         </tspan>
         <tspan x="140" dy="1.2em">
           house. The mother is living a different life with a different
         </tspan>
         <tspan x="140" dy="1.2em">
-          family and has not once come to visit the girl who's been
+          family and has not once come to visit the girl who&apos;s been
         </tspan>
         <tspan x="140" dy="1.2em">
           left alone, all by herself in this world.

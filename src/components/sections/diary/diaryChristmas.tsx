@@ -149,7 +149,7 @@ export default function DiaryChristmas({ className = '' }) {
           spark immense joy and provide a sense of wonder. The
         </tspan>
         <tspan x="690" dy="1.2em">
-          children's smiles and laughter renewed our commitment to
+          children&apos;s smiles and laughter renewed our commitment to
         </tspan>
         <tspan x="690" dy="1.2em">
           the project, showing us the profound impact that love,

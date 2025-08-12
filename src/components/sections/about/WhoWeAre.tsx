@@ -14,12 +14,12 @@ export default function WhoWeAre() {
               world they deserve. There are several history-defining challenges that the future
               working generations will have to face this century: climate change, unceasingly
               increasing inequality and much more. While we may not yet know how to solve all these,
-              we believe education can empower more people to take part in tackling humanity's
+              we believe education can empower more people to take part in tackling humanity&apos;s
               greatest obstacles.
             </p>
 
             <p className="text-lg font-urbanist">
-              By sharing the education we've been fortunate to receive in England, we hope to
+              By sharing the education we&apos;ve been fortunate to receive in England, we hope to
               increase our chances of generating and implementing the right solutions to address
               these global problems.
             </p>
@@ -45,7 +45,8 @@ export default function WhoWeAre() {
             <div className="space-y-4">
               <p className="text-lg font-urbanist">
                 Our work focuses on educating those who have done nothing wrong but have found
-                themselves in unimaginably difficult conditions simply due to the "birth roulette".
+                themselves in unimaginably difficult conditions simply due to the &quot;birth
+                roulette&quot;.
               </p>
               <p className="font-bold text-lg">As one of our guiding quotes states:</p>
             </div>

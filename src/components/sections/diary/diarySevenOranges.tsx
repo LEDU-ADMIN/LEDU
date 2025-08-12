@@ -133,7 +133,7 @@ export default function DiarySevenOranges({ className = '' }) {
           hesitation, handed over all seven oranges. His gesture
         </tspan>
         <tspan x="670" dy="1.2em">
-          wasn't out of abundance but a pure expression of
+          wasn&apos;t out of abundance but a pure expression of
         </tspan>
         <tspan x="670" dy="1.2em">
           gratitude for our presence and support.

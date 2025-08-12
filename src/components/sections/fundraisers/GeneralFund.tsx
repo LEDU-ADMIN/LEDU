@@ -48,13 +48,13 @@ export default function GeneralFund() {
             description="The General Fund supports all aspects of our mission in fostering a love for learning."
             additionalInfo={
               <div>
-                By donating, you ensure that we can respond swiftly to urgent needs—whether it's
-                setting up new online classes in remote areas, equipping schools with essential
-                materials, or funding special projects that inspire and empower children to dream
-                bigger.
+                By donating, you ensure that we can respond swiftly to urgent needs—whether
+                it&apos;s setting up new online classes in remote areas, equipping schools with
+                essential materials, or funding special projects that inspire and empower children
+                to dream bigger.
                 <br />
                 <br />
-                Each time you support Ledu’s mission, a child’s life changes.
+                Each time you support Ledu&apos;s mission, a child&apos;s life changes.
               </div>
             }
           />
