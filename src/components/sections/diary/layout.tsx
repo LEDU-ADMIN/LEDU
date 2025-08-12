@@ -5,25 +5,27 @@ import { useEffect, useState } from 'react';
 import useClientOnly from '@/hooks/useClientOnly';
 import FullHeightLayout from '../../layout/FullHeightLayout';
 import '@/app/styles/DiaryPage.module.css';
+import DiarySisterLove from './diarySisterLove';
 
 interface OpenDiaryLayoutProps {
-  leftPageContent: React.ReactNode;
-  rightPageContent: React.ReactNode;
+  pageImage: React.ReactNode;
   prevHref: string;
   nextHref?: string;
   prevLabel?: string;
+  prevLabel2_mobile?: string;
   nextLabel?: string;
+  nextLabel2_mobile?: string;
   backgroundImage: string;
 }
 
 export default function OpenDiaryLayout({
-  leftPageContent,
-  rightPageContent,
+  pageImage,
   prevHref,
   nextHref,
   prevLabel = 'Previous Page',
+  prevLabel2_mobile = 'Previous Page',
   nextLabel = 'Next Page',
-  backgroundImage,
+  nextLabel2_mobile = 'Next Page',
 }: OpenDiaryLayoutProps) {
   const router = useRouter();
   const { isMobile, isClient } = useClientOnly(1000);
@@ -89,13 +91,13 @@ export default function OpenDiaryLayout({
 
   return (
     <FullHeightLayout>
-      <div className="flex flex-col items-center justify-center min-h-screen bg-[#D8B29A] p-4">
+      <div className="flex flex-col items-center justify-center max-h-screen bg-[#D8B29A] p-4 overflow-x-visible">
         <div className={`relative ${isMobile ? 'w-screen overflow-hidden' : 'w-full max-w-5xl'}`}>
           {/* Maintain book's aspect ratio on all devices */}
           <div
-            className={`relative ${isMobile ? 'w-screen' : 'aspect-[3/2]'}`}
+            className={`mx-auto relative ${isMobile ? 'w-screen' : 'aspect-[3/2]'}`}
             style={{
-              height: isMobile ? 'calc(100vh - 100px)' : undefined, // leave space for buttons
+              height: 'calc(100vh - 100px)', // leave space for buttons
             }}
           >
             {/* 🔁 Sliding container with background + content */}
@@ -105,59 +107,30 @@ export default function OpenDiaryLayout({
               } ${isMobile ? 'w-[200vw]' : 'w-full'}`}
             >
               {/* 📚 Book background (stretch full size) */}
-              <div className="absolute inset-0 z-0">
-                <Image
-                  src={!isAnimating ? backgroundImage : '/images/bookpages/open.png'}
-                  alt="Diary background"
-                  fill
-                  className={isMobile ? 'object-cover' : 'object-contain'}
-                  priority
-                />
-              </div>
-
-              {/* 📄 Page text content (moves with book) */}
-              <div className={`relative z-10 flex ${isMobile ? 'w-[200vw]' : 'w-full'}`}>
-                {/* LEFT PAGE */}
-                <div
-                  className={`${
-                    isMobile
-                      ? 'w-screen flex justify-center items-start pt-[12%]'
-                      : 'w-1/2 pl-12 pt-28 pb-20'
-                  }`}
-                  style={{
-                    transition: 'opacity 0.3s ease',
-                    opacity: Number(!isAnimating),
-                  }}
-                >
-                  <div
-                    className={`${
-                      isMobile ? 'w-[80%] h-[75%] text-[14px] leading-snug px-1' : 'w-full'
-                    } flex flex-col`}
-                  >
-                    {leftPageContent}
-                  </div>
-                </div>
-
-                {/* RIGHT PAGE */}
-                <div
-                  className={`${
-                    isMobile
-                      ? 'w-screen flex justify-center items-start pt-[12%]'
-                      : 'w-1/2 pr-12 pt-28 pb-20'
-                  }`}
-                  style={{
-                    transition: 'opacity 0.3s ease',
-                    opacity: Number(!isAnimating),
-                  }}
-                >
-                  <div
-                    className={`${
-                      isMobile ? 'w-[80%] h-[75%] text-[14px] leading-snug px-1' : 'w-full'
-                    } flex flex-col`}
-                  >
-                    {rightPageContent}
-                  </div>
-                </div>
+              <div
+                className="absolute inset-0 z-0 w-full h-full"
+                onClick={() => {
+                  if (isAnimating) return;
+                  if (isMobile) {
+                    if (mobileViewStep === 0) {
+                      setMobileViewStep(1); // show right page
+                      return;
+                    }
+                  }
+                  if (nextHref) animateAndNavigate(nextHref);
+                }}
+              >
+                {!isAnimating ? (
+                  pageImage
+                ) : (
+                  <Image
+                    src="/images/bookpages/open.png"
+                    alt="Diary background"
+                    fill
+                    className={isMobile ? 'object-cover' : 'object-contain'}
+                    priority
+                  />
+                )}
               </div>
 
               {/* 🔄 Page turn frames (higher up, more visible) */}
@@ -195,9 +168,9 @@ export default function OpenDiaryLayout({
                 }
                 animateAndNavigate(prevHref, true);
               }}
-              className="px-4 py-2 bg-amber-800 text-white rounded hover:bg-amber-700"
+              className="px-4 py-2 mb-8 bg-amber-800 text-white rounded hover:bg-amber-700"
             >
-              {prevLabel}
+              {mobileViewStep === 0 ? prevLabel : prevLabel2_mobile}
             </button>
 
             {nextHref && (
@@ -212,9 +185,9 @@ export default function OpenDiaryLayout({
                   }
                   animateAndNavigate(nextHref);
                 }}
-                className="px-4 py-2 bg-amber-800 text-white rounded hover:bg-amber-700"
+                className="px-4 py-2 mb-8 bg-amber-800 text-white rounded hover:bg-amber-700"
               >
-                {nextLabel}
+                {mobileViewStep === 0 ? nextLabel : nextLabel2_mobile}
               </button>
             )}
           </div>

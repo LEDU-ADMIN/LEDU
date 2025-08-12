@@ -45,8 +45,6 @@ export default function Menu() {
     { href: '/fundraisers#completed-campaigns', text: 'Completed Campaigns' },
   ];
 
-  const newsLinks = [{ href: '/newsletter', text: 'Latest News' }];
-
   const socialLinks = [
     { href: 'https://facebook.com', component: Facebook, label: 'Facebook' },
     { href: 'https://linkedin.com', component: Linkedin, label: 'LinkedIn' },
@@ -70,12 +68,12 @@ export default function Menu() {
 
       {/* Slide-out Menu */}
       <div
-        className={`fixed top-0 right-0 w-full md:w-[500px] h-full bg-white shadow-lg transform transition-transform duration-300 ease-out z-40 ${
+        className={`fixed top-0 right-0 w-full md:w-[500px] h-full bg-white/50 backdrop-blur-md border rounded-[3rem] shadow-lg transform transition-transform duration-300 ease-out z-40 ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         {/* Close button */}
-        <div className="sticky top-0 flex justify-end p-4 bg-white z-10">
+        <div className="sticky top-0 flex justify-end p-4 z-10">
           <button onClick={closeMenu} className="text-black">
             <svg
               width="32"
@@ -145,36 +143,24 @@ export default function Menu() {
 
             {/* The Diary Section */}
             <div className="mb-6">
-              <h2 className="text-3xl font-gloria text-[#54B435] mb-2">the Diary</h2>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/diary"
-                    className="text-lg text-black font-gloria hover:underline"
-                    onClick={closeMenu}
-                  >
-                    the Diary
-                  </Link>
-                </li>
-              </ul>
+              <Link
+                href="/diary"
+                className="text-lg text-black font-gloria hover:underline"
+                onClick={closeMenu}
+              >
+                <h2 className="text-3xl font-gloria text-[#54B435] mb-2">the Diary</h2>
+              </Link>
             </div>
 
             {/* Our News Section */}
             <div className="mb-6">
-              <h2 className="text-3xl font-gloria text-[#19A7CE] mb-2">Our News</h2>
-              <ul className="space-y-2">
-                {newsLinks.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      className="text-lg text-black font-gloria hover:underline"
-                      onClick={closeMenu}
-                    >
-                      {link.text}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+              <Link
+                href="/newsletter"
+                className="text-lg text-black font-gloria hover:underline"
+                onClick={closeMenu}
+              >
+                <h2 className="text-3xl font-gloria text-[#19A7CE] mb-2">Our News</h2>
+              </Link>
             </div>
 
             {/* Contact Us Section */}

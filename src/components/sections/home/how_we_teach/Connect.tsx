@@ -10,14 +10,14 @@ export function ConnectSection() {
   return (
     <>
       {/* Hero Connect Section - Fixed medium screen overlapping */}
-      <div className="relative w-full max-w-[1138px] mb-12 px-4 sm:px-6">
+      <div className="relative w-full max-w-[1138px] md:mb-12 px-4 sm:px-6">
         <div className="lg:hidden">
-          <PageTitle className="text-black text-center whitespace-nowrap min-w-0 my-20">
+          <PageTitle className="max-lg:text-4xl text-black text-center whitespace-nowrap min-w-0 my-20">
             How We Teach: <br /> Our Approach
           </PageTitle>
         </div>
         {/* Changed to stack vertically until lg breakpoint (1024px) */}
-        <div className="flex flex-col lg:flex-row items-start gap-8">
+        <div className="flex flex-col lg:flex-row md:items-start md:gap-8">
           {/* Left column - Icon and titles */}
           <div className="w-full lg:w-[45%]">
             <div className="flex flex-col gap-4">
@@ -27,18 +27,18 @@ export function ConnectSection() {
                   alt="Connect icon"
                   width={110}
                   height={110}
-                  className="object-contain w-20 h-20 sm:w-28 sm:h-28 md:w-[110px] md:h-[110px]"
+                  className="object-contain w-20 h-20 sm:w-28 sm:h-28 md:w-[110px] md:h-[110px] max-md:mx-auto"
                 />
                 <div className="flex flex-col">
                   <GloriaTitle
                     as="h2"
                     color="black"
                     size="6xl"
-                    className="mb-1 text-4xl sm:text-5xl md:text-6xl"
+                    className="mb-1 text-4xl sm:text-5xl md:text-6xl max-md:text-center"
                   >
                     Connect
                   </GloriaTitle>
-                  <p className="text-xl sm:text-2xl font-gloria text-black leading-tight">
+                  <p className="text-xl sm:text-2xl font-gloria text-black leading-tight max-md:text-center">
                     How do we create connections that inspire children?
                   </p>
                 </div>
@@ -73,6 +73,13 @@ export function ConnectSection() {
                 height={60}
                 className="absolute -top-6 -left-4 sm:-top-10 sm:-left-10 opacity-30 w-16 h-12 sm:w-20 sm:h-16"
               />
+              <Image
+                src="/images/quote-right.png"
+                alt="Quote"
+                width={80}
+                height={60}
+                className="absolute -bottom-6 -right-4 sm:-bottom-10 sm:-right-10 opacity-30 w-16 h-12 sm:w-20 sm:h-16"
+              />
               <div className="pl-4 border-l-4 border-[#3E6F1B] font-urbanist">
                 <p className="text-base sm:text-lg md:text-xl text-black mb-4 sm:mb-6">
                   We show children that someone outside their community truly cares about them.
@@ -93,33 +100,41 @@ export function ConnectSection() {
               frameWidth={500}
               frameHeight={500}
               scale={0.6}
-              className="ml-auto mt-12 max-w-[80%]"
+              className="ml-auto mt-12 max-w-[80%] max-md:hidden"
               imagePath="/animated/arrow1smooth.png"
+            />
+            <Sprite
+              totalFrames={10}
+              frameWidth={385}
+              frameHeight={385}
+              scale={0.5}
+              className="self-center w-[80%] object-contain md:hidden"
+              imagePath="/animated/arrow5.png"
             />
           </div>
         </div>
       </div>
 
       {/* Teach Section Title - Improved medium screen responsiveness */}
-      <div className="w-full max-w-[1138px] mt-0 mb-10 px-4 sm:px-6">
+      <div className="w-full max-w-[1138px] mt-0 md:mb-10 px-4 sm:px-6">
         <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
           <Image
             src="/images/greenComputer.png"
             alt="Teach icon"
             width={120}
             height={100}
-            className="object-contain w-20 h-16 sm:w-24 sm:h-20 md:w-[120px] md:h-[100px]"
+            className="object-contain w-20 h-16 sm:w-24 sm:h-20 md:w-[120px] md:h-[100px] max-md:mx-auto"
           />
           <div className="flex flex-col">
             <GloriaTitle
               as="h2"
               color="black"
               size="6xl"
-              className="mb-1 text-4xl sm:text-5xl md:text-6xl"
+              className="mb-1 text-4xl sm:text-5xl md:text-6xl max-md:text-center"
             >
               Teach
             </GloriaTitle>
-            <p className="text-xl sm:text-2xl font-gloria text-black leading-tight">
+            <p className="text-xl sm:text-2xl font-gloria text-black leading-tight max-md:text-center">
               What makes our lessons unforgettable?
             </p>
           </div>
