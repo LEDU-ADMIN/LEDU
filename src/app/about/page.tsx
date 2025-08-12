@@ -34,7 +34,7 @@ export default function AboutPage() {
           src="/images/about-us-hero-adjusted-2.jpeg"
           alt="About Us Hero"
           fill
-          className="object-cover object-bottom"
+          className="object-cover"
           priority
         />
         {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent to-white/40" /> */}
@@ -67,7 +67,7 @@ export default function AboutPage() {
       </div>
 
       {/* Main Content */}
-      <main className="overflow-x-hidden">
+      <main>
         <WhoWeAre />
         <WhatWeDo onWatchVideo={() => setShowVideo(true)} />
         <OurPhilosophy />

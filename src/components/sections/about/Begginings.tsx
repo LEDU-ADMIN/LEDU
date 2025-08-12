@@ -37,7 +37,7 @@ export default function Beginnings() {
               />
             </div>
           </div>
-
+          
           <div className="flex flex-col items-center pt-20">
             {/* Center/Right Temple Illustration */}
             <div className="top-0 right-0 w-full lg:h-[500px] max-lg:order-2 max-lg:pt-10 overflow-visible lg:transform lg:translate-y-32 xl:translate-y-16 lg:translate-x-10 xl:-translate-x-20">
