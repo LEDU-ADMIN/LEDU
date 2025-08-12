@@ -27,9 +27,9 @@ export default function WhoWeAre() {
             {/* Image of people with flower necklaces in polaroid-like frame */}
             <div className="mt-8">
               <div className="w-full relative">
-                <Image 
-                  src="/images/whoWeAreWearingFlowerNecklaces.jpeg" 
-                  alt="Our team wearing flower necklaces" 
+                <Image
+                  src="/images/whoWeAreWearingFlowerNecklaces.jpeg"
+                  alt="Our team wearing flower necklaces"
                   width={500}
                   height={333}
                   className="object-cover w-full h-auto"
@@ -40,32 +40,7 @@ export default function WhoWeAre() {
           </div>
 
           {/* Right Column - with reduced top padding */}
-          <div className="flex flex-col space-y-6">
-            {/* Colorful flower images as U shape */}
-            <div className="relative flex justify-between h-[200px] mx-auto w-full max-w-[500px]">
-              {/* Left part of U - purple/green lei */}
-              <div className="relative w-[150px]">
-                <Image 
-                  src="/images/flower2.png" 
-                  alt="Purple and green lei" 
-                  width={150}
-                  height={200}
-                  className="object-contain"
-                />
-              </div>
-              
-              {/* Right part of U - red/yellow lei */}
-              <div className="relative w-[190px]">
-                <Image 
-                  src="/images/flower1.png" 
-                  alt="Red and yellow lei" 
-                  width={190}
-                  height={250}
-                  className="object-contain"
-                />
-              </div>
-            </div>
-
+          <div className="flex flex-col space-y-6 lg:pt-32">
             {/* Additional text */}
             <div className="space-y-4">
               <p className="text-lg font-urbanist">
@@ -77,18 +52,24 @@ export default function WhoWeAre() {
 
             {/* Quote box */}
             <div className="relative bg-[#E7F8FF] rounded-3xl p-8 mt-4">
-              <div className="text-[#7AB9DE] text-[80px] font-serif absolute top-0 left-4">
-                &#8220;
-              </div>
-              <blockquote className="text-2xl text-center px-6 py-4">
-                Tough times create tough men.
-                Tough men create easy times. Easy
-                times create weak people. Weak
-                people create tough times.
+              <Image
+                src="/images/quote-left.png"
+                alt="Quote mark"
+                className="absolute -top-16 -left-16 w-[175px] h-[149px] object-contain opacity-50"
+                width={175}
+                height={149}
+              />
+              <Image
+                src="/images/quote-right.png"
+                alt="Quote mark"
+                className="absolute -bottom-16 -right-16 w-[159px] h-[133px] object-contain opacity-50"
+                width={159}
+                height={133}
+              />
+              <blockquote className="text-2xl text-center px-6 py-4 font-urbanist">
+                Tough times create tough men. Tough men create easy times. Easy times create weak
+                people. Weak people create tough times.
               </blockquote>
-              <div className="text-[#FF9E7A] text-[80px] font-serif absolute bottom-0 right-4">
-                &#8221;
-              </div>
             </div>
 
             {/* Final paragraph */}
