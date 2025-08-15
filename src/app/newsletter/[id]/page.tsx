@@ -4,14 +4,8 @@ import GuestLayout from '@/components/layout/GuestLayout';
 import ScrollToTop from '@/components/shared/ScrollToTop';
 import NewsDetailPage from '@/components/sections/news/NewsDetailPage';
 
-interface NewsPageProps {
-  params: {
-    id: string;
-  };
-}
-
 // Define the page as an async server component
-export default async function NewsPage({ params }: NewsPageProps) {
+export default async function NewsPage({ params }: { params: { id: string } }) {
   const id = parseInt(params.id);
 
   if (isNaN(id)) {
