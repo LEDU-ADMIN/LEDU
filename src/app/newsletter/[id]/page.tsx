@@ -5,8 +5,11 @@ import ScrollToTop from '@/components/shared/ScrollToTop';
 import NewsDetailPage from '@/components/sections/news/NewsDetailPage';
 
 // Define the page as an async server component
-export default async function NewsPage({ params }: { params: { id: string } }) {
-  const id = parseInt(params.id);
+export default async function NewsPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id: idStr } = await params;
+  // handle possible array just to be defensive (catch-all routes can produce arrays)
+  const idValue = Array.isArray(idStr) ? idStr[0] : idStr;
+  const id = parseInt(idValue, 10);
 
   if (isNaN(id)) {
     notFound();
