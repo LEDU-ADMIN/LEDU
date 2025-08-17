@@ -1,10 +1,22 @@
 import Image from 'next/image';
 import GloriaTitle from '@/components/shared/GloriaTitle';
-import { NewsContentTag, TextTag, TitleTag, ImageTag, RowTag, ColumnTag } from './types';
+import {
+  NewsContentTag,
+  ItalicsTextTag,
+  TextTag,
+  TitleTag,
+  ImageTag,
+  RowTag,
+  ColumnTag,
+} from './types';
 
 // Render simple text content
 function TextRenderer({ content }: TextTag) {
   return <p className="my-4 text-lg">{content}</p>;
+}
+
+function ItalicsTextRender({ content }: ItalicsTextTag) {
+  return <p className="my-4 text-lg italic">{content}</p>;
 }
 
 // Render title content
@@ -62,6 +74,8 @@ export default function ContentRenderer({ tag }: { tag: NewsContentTag }) {
   switch (tag.type) {
     case 'text':
       return <TextRenderer {...(tag as TextTag)} />;
+    case 'italics':
+      return <ItalicsTextRender {...(tag as ItalicsTextTag)} />;
     case 'title':
       return <TitleRenderer {...(tag as TitleTag)} />;
     case 'image':

@@ -19,6 +19,11 @@ export interface TextTag extends ContentTag {
   content: string;
 }
 
+export interface ItalicsTextTag extends ContentTag {
+  type: 'italics';
+  content: string;
+}
+
 export interface TitleTag extends ContentTag {
   type: 'title';
   content: string;
@@ -41,7 +46,7 @@ export interface ColumnTag extends ContentTag {
 }
 
 // Union type for all content tags
-export type NewsContentTag = TextTag | TitleTag | ImageTag | RowTag | ColumnTag;
+export type NewsContentTag = TextTag | ItalicsTextTag | TitleTag | ImageTag | RowTag | ColumnTag;
 
 // Full news article with content
 export interface NewsArticle extends NewsItem {
