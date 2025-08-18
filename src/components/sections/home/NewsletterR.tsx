@@ -73,7 +73,7 @@ export default function Newsletter() {
 
       {/* Lightbulb decoration */}
       <div className="absolute bottom-0 right-0">
-        <Image src="/images/lightbulb.png" alt="" width={120} height={120} className="opacity-40" />
+        <Image src="/images/lightBulb.png" alt="" width={120} height={120} className="opacity-40" />
       </div>
 
       <div className="container mx-auto px-4">
